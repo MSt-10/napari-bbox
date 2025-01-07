@@ -270,6 +270,8 @@ def _move_active_element_under_cursor(
     layer._moving_coordinates = coordinates
     layer._is_moving = True
     if vertex is None:
+        if layer._selected_box is None: # Somehow this can be None
+            return
         # Check where dragging box from to move whole object
         center = layer._selected_box[Box.CENTER]
         shift = coord - center - layer._drag_start
