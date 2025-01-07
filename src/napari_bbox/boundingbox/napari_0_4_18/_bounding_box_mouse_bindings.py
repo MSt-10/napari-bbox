@@ -280,6 +280,8 @@ def _move_active_element_under_cursor(
     else:
         # Corner / edge vertex is being dragged so resize object
         box = layer._selected_box
+        if box is None: # Somehow this can be None
+            return
         if layer._fixed_vertex is None:
             layer._fixed_index = (vertex + 4) % Box.LEN
             layer._fixed_vertex = box[layer._fixed_index]
