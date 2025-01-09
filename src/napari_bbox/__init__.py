@@ -52,6 +52,7 @@ else:
         return layer
 
 
+Viewer.add_boundingboxlayer = add_bounding_boxes
 Viewer.add_bounding_boxes = add_bounding_boxes
 
 from enum import Enum
